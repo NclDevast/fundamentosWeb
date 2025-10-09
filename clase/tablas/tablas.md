@@ -1,14 +1,12 @@
 #**TABLAS**#
+tags para tablas 
 
-tags para tablas
-	```
-    {
-<table> -> Contenedor de tabla
-<tr> -> Fila de la tabla
-<th> -> Celda de encabezado (normalmente en negrita) 
-<td> -> Celda de datos [^1]
-    }
-	```
+```html
+table-> Contenedor de tabla
+tr> -> Fila de la tabla
+th -> Celda de encabezado (normalmente en negrita)
+td -> Celda de datos [^1]
+```
 
 ##Propiedades de tablas##
 border = "size" -> le da bordes a las tablas
