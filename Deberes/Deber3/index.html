@@ -12,59 +12,60 @@
             height: 100%;
             width: 20%;
             background-color: lightgray;
+            align-items: center;
+            flex-direction: column;
         }
         .maincontainer{
             height: 100%;
             width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         #right{
-            float:right
+            float:right;
         }
         #left{
-            float:left
+            float:left;
         }
-        .indexText{
-           font-family: Arial, Helvetica, sans-serif;
-           font-size: medium; 
-           color: black;
-           float:right;
+        .navlinks {
+            margin-top: 20px;
+            text-align: center;
         }
-        .centerDiv{
-            height: 95%;
-            width: 95%;
-
+        .navlinks a {
+            display: block;
+            margin: 8px 0;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1em;
         }
-        #foto{
-            width: 10%;
-            height: 10%;
+        .foto{
+            height: 25%;
+            width: 25%;
         }
-        
     </style>
 
 </head>
     
 <body>
 
-    <div name="main" class="maindiv">
-        <div name="L2 leftpan" class="sidecontainers" id="left">
-            <div name="L3 center">
-                <h1>
-                Index
-                </h1>
-                <a href="./paginavideo.html" class="indexText">Pagina video</a><br>
-                <a href="./form.html">Formulario</a><br>
-                <a href="./coleccion.html">Coleccion preciosa</a>
-                
+    <div class="maindiv">
+        <div class="sidecontainers" id="left">
+            <div class="navlinks">
+                <a href="index.html">Inicio</a>
+                <a href="form.html">Formulario</a>
+                <a href="paginavideo.html">Video</a>
+                <a href="coleccion.html">Colección</a>
             </div>
-            
-
         </div>
-        <div name="L2 rightpan" class="sidecontainers" id="right">
-
+        
+        <div class="sidecontainers" id="right">
         </div>
-        <div name="L2 mainpan" class="maincontainer" id="left">
-            <img src="./src/Logo_ESPEOk.png" class="maindiv">
-
+        <div class="maincontainer">
+            <br>
+            <img src="./src/Logo_ESPEOk.png" class="foto">
         </div>
     </div>
     

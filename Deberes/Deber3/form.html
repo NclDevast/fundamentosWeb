@@ -1,8 +1,97 @@
 <html>
 <head>
-    
+    <style>
+        .maindiv{
+            height: 100%;
+            width: 100%;
+        }
+        .sidecontainers{
+            display:flex;
+            justify-content: center;
+            height: 100%;
+            width: 20%;
+            background-color: lightgray;
+            align-items: center;
+            flex-direction: column;
+        }
+        .maincontainer{
+            height: 100%;
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #right{
+            float:right;
+        }
+        #left{
+            float:left;
+        }
+        .navlinks {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .navlinks a {
+            display: block;
+            margin: 8px 0;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1em;
+        }
+        .foto{
+            height: 25%;
+            width: 25%;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="maindiv">
+        <div class="sidecontainers" id="left">
+            <div class="navlinks">
+                <a href="index.html">Inicio</a>
+                <a href="form.html">Formulario</a>
+                <a href="paginavideo.html">Video</a>
+                <a href="coleccion.html">Colección</a>
+            </div>
+        </div>
+        <div class="sidecontainers" id="right">
+        </div>
+        <div class="maincontainer">
+            <form>
+                <fieldset>
+                    <legend>Datos</legend>
+                    <label>Nombre: </label>
+                    <input type="text" placeholder="Ingrese su nombre completo">
+                    <br>
+                    <label>Direccion: </label>
+                    <textarea>Direccion</textarea>
+                    <br>
+
+                    <label>Sexo</label>
+                    <input type="radio" name="Sexo"><label>Hombre</label>
+                    <input type="radio" name="Sexo"><label>Mujer</label>       
+                    <br>
+
+                    <label>Provincia de nacimiento</label>
+                    <select>
+                        <option value=""></option>
+                        <option value="">Pichincha</option>
+                        <option value="">Guayas</option>
+                        <option value="">Cotopaxi</option>
+                        <option value="">Azuay</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <label>enviar</label>
+                    <br><input type="button" value="Enviar">
+                </fieldset>
+                <fieldset>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
