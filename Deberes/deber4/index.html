@@ -14,19 +14,19 @@
             display: flex;
         }
         
-        .sidebar {
+        nav.sidebar {
             width: 250px;
             border-right: 1px solid #333;
             height: 100vh;
             padding: 20px;
         }
 
-        .main-content {
+        main.main-content {
             flex: 1;
             border-right: 1px solid #333;
         }
 
-        .right-sidebar {
+        aside.right-sidebar {
             width: 350px;
             padding: 20px;
         }
@@ -44,9 +44,9 @@
         }
 
         .nav-item img {
-            width: 100%;  /* Changed from 30px */
-            height: auto; /* Changed from 30px */
-            max-width: 200px; /* Added to prevent too large images */
+            width: 100%;  
+            height: auto; 
+            max-width: 200px; 
         }
 
         .search-bar {
@@ -58,11 +58,11 @@
             margin-bottom: 20px;
         }
 
-        .header {
+        header.header {
             display: none;
         }
 
-        .tab-buttons {
+        nav.tab-buttons {
             display: flex;
             border-bottom: 1px solid #333;
         }
@@ -83,6 +83,12 @@
         .tab-button:hover {
             background: #222;
         }
+
+        figure.logo img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 
     <script>
@@ -92,40 +98,42 @@
     </script>
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo">
+    <nav class="sidebar" aria-label="Barra lateral">
+        <figure class="logo">
             <img src="./src/logoX.png" alt="X Logo" height="60" width="60">
-        </div>
-        <div class="nav-item" onclick="changeContent('Inicio.html')">
+        </figure>
+
+        <div class="nav-item" role="button" onclick="changeContent('Inicio.html')">
             <img src="./src/BotonInicio.jpg" alt="Inicio">
         </div>
-        <div class="nav-item" onclick="location.href='explorar.html'">
+        <div class="nav-item" role="button" onclick="location.href='explorar.html'">
             <img src="./src/explorar.jpg" alt="Explorar">
         </div>
-        <div class="nav-item" onclick="location.href='#'">
+        <div class="nav-item" role="button" onclick="location.href='#'">
             <img src="./src/RestoBotonesjpg.jpg" alt="Para ti">
         </div>
-    </div>
+    </nav>
 
-    <div class="main-content">
-        <div class="tab-buttons">
-            <div class="tab-button" onclick="changeContent('siguiendo.html')">
+    <main class="main-content">
+        <nav class="tab-buttons" role="tablist" aria-label="Pestañas">
+            <div class="tab-button" role="tab" onclick="changeContent('siguiendo.html')">
                 <img src="./src/siguiendo.jpg" alt="Siguiendo">
             </div>
-            <div class="tab-button" onclick="changeContent('Parati.html')">
+            <div class="tab-button" role="tab" onclick="changeContent('Parati.html')">
                 <img src="./src/Parati.jpg" alt="Para ti">
             </div>
-        </div>
-        <iframe id="mainFrame" src="Inicio.html" style="width: 100%; height: calc(100vh - 60px); border: none;"></iframe>
-    </div>
+        </nav>
 
-    <div class="right-sidebar">
+        <iframe id="mainFrame" src="Inicio.html" title="Contenido principal" style="width: 100%; height: calc(100vh - 60px); border: none;"></iframe>
+    </main>
+
+    <aside class="right-sidebar" aria-label="Barra derecha">
         <form>
-            <input type="text" class="search-bar" placeholder="Buscar en X">
+            <input type="text" class="search-bar" placeholder="Buscar en X" aria-label="Buscar">
         </form>
         <div class="trends">
             <h2>Tendencias para ti</h2>
         </div>
-    </div>
+    </aside>
 </body>
 </html>
