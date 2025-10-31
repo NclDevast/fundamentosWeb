@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persona>
+    <nombre> Santiago </nombre>
+    <apellido> Gallardo </apellido>
+    <gustos>
+        <gusto1>
+            <descripcion>
+                Me gusta ir a tomar
+            </descripcion>
+            <horario>
+                Viernes sin falta
+            </horario>
+        </gusto1>
+        <gusto2>
+            <descripcion>
+                Me gusta la musica
+            </descripcion>
+            <horario>
+                cuando caiga
+            </horario>
+        </gusto2>
+        <gusto3>
+            <deporte>
+                <futbol> Defensa </futbol>
+                <golf>No juego</golf>
+            </deporte>
+        </gusto3>
+    </gustos>
+</persona>

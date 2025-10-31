@@ -1,0 +1,179 @@
+<!DOCTYPE html> <html lang="es">
+<head>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Personal</title>
+    <link rel="icon" href="src/FotoPerfil.jpg" type="image/jpg">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+        }
+
+        #sidebar-nav {
+            width: 200px; 
+            position: fixed; 
+            left: 0;
+            top: 0;
+            height: 100vh; 
+            background-color: #333;
+            padding-top: 20px;
+        }
+
+        #sidebar-nav ul {
+            list-style-type: none; 
+            padding: 0;
+            margin: 0;
+        }
+
+        #sidebar-nav ul li {
+            padding: 15px 20px;
+        }
+
+        #sidebar-nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        #sidebar-nav ul li a:hover {
+            color: #4CAF50;
+        }
+
+       
+        #main-content {
+            margin-left: 200px;
+            padding: 25px;
+            width: 100%; 
+        }
+
+
+        .content-box {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        header {
+            border-bottom: 2px solid #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        input[type="text"], select, textarea {
+            width: 90%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="sidebar-nav">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="biografia.html">Biografía</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="contacto.html">Contacto (Formulario)</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+
+        <header>
+            <h1>Mi Página Personal - Inicio</h1>
+        </header>
+
+        <article class="content-box">
+            <h2>¡Bienvenido/a!</h2>
+            <p>Soy Santiago Gallardo, estudiante universitario en la Universidad de las Fuerzas Armadas ESPE</p>
+            <p>En esta página voy a relatar un poco sobre mí, quien soy, que hago y que me gusta.</p>
+        </article>
+
+        <section class="content-box">
+            <h3>Un vistazo a mis Hobbies</h3>
+            <p>Aquí hay algunas cosas que disfruto hacer:</p>
+            <ul> <li>Programar</li>
+                <li>Jugar videoguegos (como Valorant lamentablemente)</li>
+                <li>Arte: Música, poesía y teatro </li>
+            </ul>
+            
+            <figure>                 
+                <img src="src/poesia.jpg" alt="Foto de placeholder">
+                <figcaption>Poesia a luz de una vela!</figcaption>
+            </figure>
+        </section>
+
+        <section class="content-box">
+            <h3>Multimedia </h3>
+            <p>Una canción que escribí hace algun tiempo:</p>
+            <video controls width="400"> <source src="src/Desidia.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento video.
+            </video>
+        </section>
+
+        <section class="content-box">
+            
+            <details> <summary>Haz clic para ver más detalles</summary>
+                <p>Esta información estaba oculta. ¡Magia!</p>
+            </details>
+            
+            <p>Mi nivel de habilidad en HTML (usando 'meter'):</p>
+            <label for="html-skill">HTML:</label>
+            <meter id="html-skill" value="4" min="0" max="10">8 de 10</meter> <p>Progreso de la carrera que he avanzado:</p>
+            <label for="file">Progreso:</label>
+            <progress id="file" value="32" max="100"> 32% </progress> </section>
+
+        <section class="content-box" id="formulario-simple">
+             <h3>Formulario Simple </h3>
+             <form action="#" method="get">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre"> <label for="opcion">Elige una opción:</label>
+                <select id="opcion" name="opcion"> <option value="1">Opción 1</option>
+                    <option value="2">Opción 2</option>
+                </select>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4"></textarea> <button type="submit">Enviar</button>
+             </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 - Santiago Gallardo</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>

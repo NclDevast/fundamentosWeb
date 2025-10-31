@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies - Mi Página Personal</title>
+    <link rel="icon" href="src/FotoPerfil.jpg" type="image/jpg">
+    
+
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f4f4; 
+            display: flex; 
+        }
+        #sidebar-nav { 
+            width: 200px; 
+            position: fixed; 
+            left: 0; 
+            top: 0; 
+            height: 100vh; 
+            background-color: #333; 
+            padding-top: 20px; 
+        }
+        #sidebar-nav ul { 
+            list-style-type: none; 
+            padding: 0; 
+            margin: 0; 
+        }
+        #sidebar-nav ul li {
+             padding: 15px 20px; 
+            }
+        #sidebar-nav ul li a { 
+            text-decoration: none; 
+            color: white; 
+            font-weight: bold; 
+        }
+        #sidebar-nav ul li a:hover { 
+            color: #4CAF50; 
+        }
+        #main-content { 
+            margin-left: 200px; 
+            padding: 25px; 
+            width: 100%; 
+        }
+        .content-box { 
+            background-color: white; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+        }
+        header { 
+            border-bottom: 2px solid #4CAF50; 
+            margin-bottom: 20px; 
+        }
+        footer { 
+            text-align: center; 
+            margin-top: 30px; 
+            font-size: 0.9em; 
+            color: #777; 
+        }
+        
+        img, video, iframe { 
+            max-width: 100%; 
+            height: auto; 
+        }
+        .video-container { 
+            position: relative; 
+            padding-bottom: 46.25%; 
+            height: 0; 
+            overflow: hidden; 
+            max-width: 100%; 
+        }
+        .video-container iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 50%; 
+            height: 60%; 
+        }
+        input[type="text"], select, textarea { 
+            width: 90%; 
+            padding: 8px; 
+            margin-top: 5px; 
+            margin-bottom: 10px; 
+            border: 1px solid #ddd; 
+        }
+        button {
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 10px 15px; 
+            border: none; 
+            cursor: pointer; 
+        }
+        button:hover { 
+            background-color: #45a049; 
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="sidebar-nav">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="biografia.html">Biografía</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="contacto.html">Contacto (Formulario)</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+
+        <header>
+            <h1>Mis Hobbies</h1>
+        </header>
+
+        <section class="content-box">
+            <h3>Música</h3>
+            <p>Como mencioné, la musica es una de las cosas que mas me apasiona, como por ejemplo:</p>
+            <div class="video-container">
+                <iframe width="280" height="150" src="https://www.youtube.com/embed/FHd3nN2SsZ8?si=um_RKla8WOC5zlNR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="content-box">
+            <h3>Poesia</h3>
+            <p>Disfruto mucho escribir de poesia, es algo que me libera.</p>
+            <p>
+            Poema sin publicar #2<br>
+            <br>
+
+            Ahora que no tengo razones para escribirte<br>
+            ¿De qué chuchas escribo?<br>
+            Ya no siento amarguras ni me debo apologías<br>
+            Porque cada uno de mis pendientes se extravió<br>
+            <br>
+
+            Dejar ir es un ejercicio extraño<br>
+            Es aceptar que cediste partes de tu alma<br>
+            Pero que algo volverá a ocupar aquel vacío<br>
+            Y yo siento que se me perdió el tenedor plástico del Lonchis<br>
+            Cuando tranquilamente puedo coger otro del cajón<br>
+            <br>
+
+            En nuestra historia (que no es extraña)<br>
+            Te escribía como si fueses la última musa<br>
+            Y mis cuadernos parecía que llevasen tu membrete<br>
+            <br>
+
+            Pero ahora, soy amante de otra cosa<br>
+            Soy amante del humo de segunda<br>
+            De comerme los ajos del tostado sin pensar en vos<br>
+            De los actuar absurdo y de la gente que me escucha<br>
+            <br>
+
+            No es el odio que me consume, es la nostalgia<br>
+            Que bonito era cuando calentabas mis manos de ultratumba<br>
+            El olor de tu cabello y parar el tiempo hablando de sandeces<br>
+            Miles cosas mas que roen mi memoria, pero tal como dijo Neruda<br>
+            Nosotros los de entonces ya no somos los mismos<br>
+            </p>
+        </section>
+        
+        <section class="content-box">
+            <h3>Memes</h3>
+            <p>Realmente no sabia mucho de que hablar asi que incluyo un meme</p>
+            <video controls width="500"> <source src="src/ssVid.net--Strike-Me-Down-Zeus_360p.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento video.
+            </video>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 - Santiago Gallardo</p>
+        </footer>
+
+    </main>
+</body>
+</html>
