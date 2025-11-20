@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: black;
+            color: white;
+        }
+
+        .tweet {
+            border: 1px solid #333;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            margin-right: 15px;
+        }
+
+        .tweet-content {
+            flex: 1;
+        }
+
+        .tweet-actions {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+            max-width: 400px;
+        }
+
+        .action-button {
+            color: #666;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="tweet">
+        <div class="profile-icon"></div>
+        <div class="tweet-content">
+            <strong>Usuario</strong> @usuario · 1h
+            <p>Este es un tweet de ejemplo para mostrar el diseño básico de X.</p>
+            <div class="tweet-actions">
+                <span class="action-button">💬 0</span>
+                <span class="action-button">🔄 0</span>
+                <span class="action-button">❤️ 0</span>
+                <span class="action-button">📊</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

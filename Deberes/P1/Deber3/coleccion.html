@@ -1,0 +1,91 @@
+<html>
+<head>
+    <style>
+        .maindiv{
+            height: 100%;
+            width: 100%;
+        }
+        .sidecontainers{
+            display:flex;
+            justify-content: center;
+            height: 100%;
+            width: 20%;
+            background-color: lightgray;
+            align-items: center;
+            flex-direction: column;
+        }
+        .maincontainer{
+            height: 100%;
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #right{
+            float:right;
+        }
+        #left{
+            float:left;
+        }
+        .navlinks {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .navlinks a {
+            display: block;
+            margin: 8px 0;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1em;
+        }
+        .foto{
+            height: 25%;
+            width: 25%;
+        }
+        .gridconteiner{
+            display: grid;
+        }
+    </style>
+</head>
+<body>
+    <div class="maindiv">
+        <div class="sidecontainers" id="left">
+            <div class="navlinks">
+                <a href="index.html">Inicio</a>
+                <a href="form.html">Formulario</a>
+                <a href="paginavideo.html">Video</a>
+                <a href="coleccion.html">Colección</a>
+            </div>
+        </div>
+        <div class="sidecontainers" id="right">
+        </div>
+        <div class="maincontainer">
+            <div class="gridconteiner">
+                <div>
+                    <h1>Coleccion Valiosa</h1>
+                    <video width="200" height="200" controls>
+                        <source src="./src/YTDown.com_YouTube_y-Ahora-y-Ahoraaaa-El-Loco-Abdala_Media_WDWbXWBJdDY_002_360p.mp4" type="video/mp4" >
+                    </video>
+                </div>
+                <div>
+                    <video width="200" height="200" controls>
+                        <source src="./src/YTDown.com_YouTube_funky-town-low-quality-fish_Media_mHJ3l18YqNM_002_144p.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div>
+                    <h2>Mensaje importante</h2>
+                    <audio controls>
+                        <source src="./src/UNO_DEBE_IMAGINAR_FELIZ_A_SISIFO.mp3" type="audio/mp3">
+                    </audio>
+                </div>
+                <div>
+                    <div class="tenor-gif-embed" data-postid="4424376305435801900" data-share-method="host" data-aspect-ratio="0.564257" data-width="100%"><a href="https://tenor.com/view/steezus-gif-4424376305435801900">Steezus GIF</a>from <a href="https://tenor.com/search/steezus-gifs">Steezus GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

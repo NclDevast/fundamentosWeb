@@ -1,0 +1,48 @@
+#nav{
+    background-color: #990B0B;
+    border: 1px solid black;
+    
+    position:sticky;
+}
+aside{
+    position: relative; /* necesario para posicionar children absolute */
+    width: 30%;
+    height: 100%;
+    padding-left: 5px;
+    padding-top: 10px;
+    border: 1px;
+    border-style: outset;
+}
+#main{
+    display: flex;
+}
+.dropdown {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px ;
+    border-style: double;
+    background-color:#990B0B ;
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 48px; /* ajusta para que el panel quede junto al botón */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f9f9f9;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown:hover + .dropdown-content {
+  display: block;
+}
