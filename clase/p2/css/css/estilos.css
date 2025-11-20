@@ -1,0 +1,16 @@
+#contenedor{
+    width : 50%;
+    height: 50%;
+    background-color: aquamarine;
+}
+#contenedor2{
+    width:50%;
+    height: 50%;
+    background-color: blue;
+}
+p.cambio{
+    border: 2px solid pink;
+    position:relative;
+    right:5px;
+    width: 50px;
+}

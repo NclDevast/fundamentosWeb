@@ -1,0 +1,7 @@
+#carrusel{
+    width: 70%;
+    height: 20%;
+    background-color: lightblue;
+    position: relative;
+    left: 10px;
+}
