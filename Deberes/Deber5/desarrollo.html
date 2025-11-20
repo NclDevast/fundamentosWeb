@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo - Tú eres el hombre</title>
+    <link rel="icon" href="../imagenes/favicon.ico" type="image/x-icon">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding-top: 60px; background-color: #f4f4f4; color: #333; }
+        #contenido-principal { max-width: 900px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        header { background-color: #3498db; color: white; padding: 20px; text-align: center; margin-bottom: 20px; }
+        footer { background-color: #34495e; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+        nav { background-color: #2c3e50; padding: 10px 0; text-align: center; position: fixed; top: 0; width: 100%; z-index: 1000; }
+        nav a { color: white; text-decoration: none; padding: 10px 20px; display: inline-block; }
+        nav a:hover { background-color: #3498db; }
+        section { margin-bottom: 30px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .caja-contenedor { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .contenido-caja { width: 250px; height: 250px; background-color: #ecf0f1; border: 5px solid #3498db; display: flex; justify-content: center; align-items: center; text-align: center; box-sizing: border-box; overflow: hidden; padding: 10px; }
+        figure { margin: 0; padding: 0; }
+        figcaption { font-style: italic; margin-top: 5px; color: #7f8c8d; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="inicio.html">Inicio</a>
+        <a href="desarrollo.html">Desarrollo</a>
+        <a href="final.html">Desenlace</a>
+    </nav>
+
+    <div id="contenido-principal">
+        <audio src="./src/GodotTheme.mp3" autoplay loop></audio>
+
+        <header>
+            <h1>DESARROLLO: EL SOBRINO ACUSADO</h1>
+        </header>
+
+        <main>
+            <section id="narrativa-desarrollo">
+                <div>
+                    <h2>La Búsqueda Contradictoria</h2>
+                    <p>La mañana del domingo en cuestión, el viejo Charley Goodfellow estaba tan sobrecogido del dolor que trataba de convencer a los otros amigos de que no armaran revuelo, pensando que lo mejor era esperar un poco. Sin embargo, el sobrino del señor Shuttleworthy, Pennifeather, no quiso aceptar la idea de "quedarse quietos" e insistió en la búsqueda del "cadáver del asesinado". El señor Goodfellow comentó con agudeza que se trataba de "una expresión singular, por no decir otra cosa".</p>
+                    <p>Goodfellow convenció a todos, salvo a Pennifeather, de que la búsqueda la realizarían "en *masse*," encabezados por el propio Charley. Pese a que los condujo a todo tipo de rincones remotos, seguía sin encontrarse el menor rastro.</p>
+                </div>
+                
+                <div class="caja-contenedor">
+                    <div class="contenido-caja" style="width: 500px; height: 300px;">
+                        <video controls autoplay muted style="max-width: 100%;" src="./src/Film.mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
+                    </div>
+                </div>
+
+                <section id="rastreo-pistas">
+                    <h2>Los Descubrimientos de Goodfellow</h2>
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                        <caption style="padding: 10px; background-color: #34495e; color: white;">Pistas Encontradas contra Pennifeather</caption>
+                        <thead>
+                            <tr>
+                                <th style="border: 1px solid #ccc; padding: 8px;">Pista</th>
+                                <th style="border: 1px solid #ccc; padding: 8px;">Circunstancia</th>
+                                <th style="border: 1px solid #ccc; padding: 8px;">Rol de Goodfellow</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #ccc; padding: 8px;">Chaleco ensangrentado de Pennifeather</td>
+                                <td style="border: 1px solid #ccc; padding: 8px;">Hallado en el fondo de un charco, tras ser vaciado.</td>
+                                <td style="border: 1px solid #ccc; padding: 8px;">Sugirió vaciar el charco.</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ccc; padding: 8px;">Cortaplumas ensangrentado de Pennifeather</td>
+                                <td style="border: 1px solid #ccc; padding: 8px;">Recogido por Goodfellow del pasto en el camino de vuelta.</td>
+                                <td style="border: 1px solid #ccc; padding: 8px;">Lo intentó guardar, pero fue detenido.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                
+                <h2>El Motivo y la Acusación Formal</h2>
+                <details>
+                    <summary style="font-weight: bold; cursor: pointer; color: #2980b9;">Haga clic para expandir la digresión sobre Cui Bono?</summary>
+                    <p style="margin-top: 10px; padding: 10px; border-left: 3px solid #3498db;">
+                        La frase *Cui bono?* (¿para beneficio de quién?) comprometía a Pennifeather, pues el testamento a su favor no se había modificado. El intento de Goodfellow de defender a Pennifeather, llamándolo "heredero del digno señor Shuttle-worthy", sirvió para imputarle el terrible crimen.
+                    </p>
+                </details>
+                
+                <p>Al preguntársele dónde se hallaba, Pennifeather reconoció que esa misma mañana había salido con un rifle a cazar ciervos en la zona próxima al charco. Goodfellow, con lágrimas en los ojos, declaró que Shuttleworthy le había comunicado inequívocamente al sobrino su decisión irrevocable de anular el testamento. Se procedió al arresto inmediato del señor Pennifeather.</p>
+            </section>
+        </main>
+        
+        <footer>
+            <small>Cuento digital: Desarrollo / Nudo &copy; 2025</small>
+        </footer>
+    </div>
+</body>
+</html>
