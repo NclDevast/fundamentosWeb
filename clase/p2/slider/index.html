@@ -1,32 +1,41 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/thumbelina.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/thumbelina.js"></script>
     <script type="text/javascript">
-        $(function(){
-            $('#carrusel').Thumbelina({
-                $bwdBut:$('#carrusel .left'),
-                $fwdBut:$('#carrusel .right')
-            });
-        });
-
-    </script>
+		$(function() {
+		$('#carrusel').Thumbelina({
+			$bwdBut:$('#carrusel .left'),
+			$fwdBut:$('#carrusel .right')
+		});
+	});
+	</script>
     <title>Document</title>
 </head>
 <body>
-
-    <div id="carrusel">
-        <div class="thumbelina-but horiz left">&#706;</div>
-        <ul>
-            <li>hola</li>
-            <li>chao</li>
-        </ul>
-        <div class="thumbelina-but horiz right">&#707;</div>
-    </div>
+    <main>
+        <h1>PRODUCTOS</h1>
+        <div id="carrusel">
+            <div class="thumbelina-but horiz left" style="height: 100%;">&#706;</div>
+            <ul>
+                <li><img src="./src/gui1.png" height="90%" width="100px"></li>
+                <li><img src="./src/gui2.png" height="90%" width="100px"></li>
+                <li><img src="./src/gui3.png" height="90%" width="100px"></li>
+                <li><img src="./src/gui4.png" height="90%" width="100px"></li>
+                <li><img src="./src/gui4.png" height="90%" width="100px"></li>
+                <li><img src="./src/gui4.png" height="90%" width="100px"></li>
+            </ul>
+            <div class="thumbelina-but horiz right" style="height: 100%;">&#707;</div>
+        </div>
+    </main>
+    <section>
+        placeholder
+    </section>
+    
     
 </body>
 </html>
