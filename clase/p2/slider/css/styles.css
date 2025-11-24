@@ -5,6 +5,13 @@
     position: relative;
     left: 10px;
 }
+#carrusel2{
+    width: 100px;
+    height: 90%;
+    background-color: lightblue;
+    position: relative;
+    left: 10px;
+}
 body{
     display: flex;
 }
