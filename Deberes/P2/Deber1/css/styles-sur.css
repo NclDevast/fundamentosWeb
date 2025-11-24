@@ -54,7 +54,9 @@ aside{
 }
 h1{
     padding-left: 15%;
+    font-size: 2.5em; /* Tamaño de fuente más grande */
 }
 p{
     padding-left: 10%;
+    font-size: 1.2em; /* Tamaño de fuente más grande */
 }

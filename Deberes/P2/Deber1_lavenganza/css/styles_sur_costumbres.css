@@ -45,5 +45,10 @@ section {
     text-align: justify;
 }
 h1 {
+    text-align: center;
     color: #3e2723;
+    font-size: 2.5em; /* Tamaño de fuente más grande */
+}
+p{
+    font-size: 1.5em; /* Tamaño de fuente más grande */
 }
