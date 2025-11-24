@@ -1,71 +1,98 @@
-  /* Estilo de la barra horizontal (nav) */
-  #csMenu {
-    display: inline-block;	
-    font-size: 16px;    
+#csMenu {
+    display: inline-block; 	
+    font-size: 16px; 	 	
     overflow: hidden;
-    font-family: 'Times New Roman', Times, serif; /* Fuente más clásica */
-    background-color: #5D4037; /* Marrón oscuro para el fondo del nav */
-  }  
-  /* Estilo de bloque del primer nivel */
-  #csMenu ul {
+    font-family: 'Times New Roman', Times, serif; 
+    background-color: #5D4037; 
+} 	
+
+/* Estilo de bloque del primer nivel (<ul>) */
+#csMenu ul {
     margin: 0;
     padding: 0;
-    display: block;	
+    display: block; 
     list-style: none;
-  }
-  /* Estilo de cada celda */
-  #csMenu ul li {
-    float: left;   
-    display: block;	 
-    padding-bottom: 5px;
-  }
-  /* Estilo de cada enlace */
-  #csMenu ul li a {
-    color: #fdf5e6; /* Color pergamino para el texto */
-    display: block;	    
-    padding: 0.6em 0.8em;	
-    text-decoration: none;
-  }
-  /* Estilo de cada enlace (sobre) */
-  #csMenu ul li a:hover {
-    background-color: #8D6E63; /* Un marrón más claro para el hover */
-  }
+}
 
-  /* Estilo de bloque del segundo nivel */
+/* Estilo de cada celda (<li>) - Primer Nivel */
+#csMenu ul li {
+    float: left; 	
+    display: block; 	
+}
+
+/* Estilo de cada enlace (<a>) - Primer Nivel */
+#csMenu ul li a {
+    color: #fdf5e6; 
+    display: block; 	 	
+    padding: 0.6em 0.8em; 
+    text-decoration: none;
+}
+
+/* Estilo de cada enlace (sobre) - Primer Nivel */
+#csMenu ul li a:hover {
+    background-color: #8D6E63; 
+}
+
+/* Estilo de bloque del segundo nivel (<ul>) */
 #csMenu ul li ul {
     display: none;
     position: absolute;
-    top: 100%; /* O el valor que necesites, pero aseguramos que está debajo del padre */
-    background-color: #795548;
+    background-color: #795548; 
     box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.4);
-    /* **Ajuste de posición si es necesario** */
-    margin-top: -5px; /* <--- AJUSTAR MARGEN SUPERIOR NEGATIVO */
 }
-  /* Estilo de bloque del segundo nivel (sobre) */
-  #csMenu ul li:hover ul {
+
+/* Estilo de bloque del segundo nivel (sobre) - Muestra el segundo nivel */
+#csMenu ul li:hover ul {
     display: block;
-  }
-  /* Estilo de cada celda */
-  #csMenu ul li:hover ul li {
+}
+
+/* Estilo de celda (<li>) dentro del segundo nivel */
+#csMenu ul li ul li {
     float: none;
-  }
-  /* Estilo de cada enlace */
-  #csMenu ul li:hover ul li a {
+    /* CONTEXTO CLAVE PARA EL 3ER NIVEL: El <li> padre debe ser 'relative' */
+    position: relative; 
+}
+
+/* Estilo de cada enlace - Segundo Nivel */
+#csMenu ul li:hover ul li a {
     text-align: left;
     white-space: nowrap;
-  }
-    /* Estilo de cada enlace (sobre) */
-  #csMenu ul li:hover ul li a:hover {
-    background-color: #A1887F; /* Un marrón aún más claro para el hover del submenú */
-  }
+}
 
-  /* Estilo de bloque del tercer nivel */
-  #csMenu ul li ul li ul {
-    display: none !important;    
-  }
-  /* Estilo de bloque del tercer nivel (sobre) */
-  #csMenu ul li ul li:hover ul {
-    top: 2em;
-    left: 7em;
+/* Estilo de cada enlace (sobre) - Segundo Nivel */
+#csMenu ul li:hover ul li a:hover {
+    background-color: #A1887F; 
+}
+
+/* ========================================================== */
+/* ESTILOS DEL TERCER NIVEL (ANIDADO EN UN ÍTEM DEL SEGUNDO) */
+/* ========================================================== */
+
+/* Estilo de bloque del tercer nivel (<ul>) */
+#csMenu ul li ul li ul {
+    display: none !important; 	 	
+    position: absolute; 
+    /* Hereda color de fondo del segundo nivel */
+    background-color: #795548; 
+}
+
+/* Estilo de cada celda (<li>) dentro del tercer nivel */
+#csMenu ul li ul li ul li {
+    /* Asegura que los ítems del tercer nivel NO hereden float:left del primer nivel */
+    float: none;
+}
+
+/* Estilo de cada enlace (<a>) dentro del tercer nivel */
+#csMenu ul li ul li ul li a {
+    /* Asegura que el padding sea el mismo que el segundo nivel */
+    padding: 0.6em 0.8em;
+}
+
+/* Estilo de bloque del tercer nivel (sobre) - Muestra el tercer nivel */
+#csMenu ul li ul li:hover ul {
+    /* *** CORRECCIÓN CLAVE ***: left: 100% para posicionarlo al borde derecho del padre */
+    left: 100%; 
+    /* Posiciona el submenú a la misma altura que su <li> padre */
+    top: 0; 
     display: block !important;
-  }
+}
