@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #fdf5e6; /* Un color de fondo tipo pergamino */
+    color: #5d4037;
+}
+#nav-container {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center; /* Centra el contenido del nav */
+    align-items: center;
+    position: relative; /* Para posicionar el logo */
+    border-bottom: 3px solid #3e2723; /* Borde inferior colonial */
+}
+main {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo {
+    position: absolute;
+    left: 20px; /* Espacio a la izquierda */
+    font-size: 24px;
+    color: #fdf5e6;
+    font-weight: bold;
+}
+section {
+    width: 80%;
+    text-align: justify;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: #3e2723;
+}

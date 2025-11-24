@@ -1,0 +1,71 @@
+  /* Estilo de la barra horizontal (nav) */
+  #csMenu {
+    display: inline-block;	
+    font-size: 16px;    
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif; /* Fuente más clásica */
+    background-color: #5D4037; /* Marrón oscuro para el fondo del nav */
+  }  
+  /* Estilo de bloque del primer nivel */
+  #csMenu ul {
+    margin: 0;
+    padding: 0;
+    display: block;	
+    list-style: none;
+  }
+  /* Estilo de cada celda */
+  #csMenu ul li {
+    float: left;   
+    display: block;	 
+    padding-bottom: 5px;
+  }
+  /* Estilo de cada enlace */
+  #csMenu ul li a {
+    color: #fdf5e6; /* Color pergamino para el texto */
+    display: block;	    
+    padding: 0.6em 0.8em;	
+    text-decoration: none;
+  }
+  /* Estilo de cada enlace (sobre) */
+  #csMenu ul li a:hover {
+    background-color: #8D6E63; /* Un marrón más claro para el hover */
+  }
+
+  /* Estilo de bloque del segundo nivel */
+#csMenu ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%; /* O el valor que necesites, pero aseguramos que está debajo del padre */
+    background-color: #795548;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.4);
+    /* **Ajuste de posición si es necesario** */
+    margin-top: -5px; /* <--- AJUSTAR MARGEN SUPERIOR NEGATIVO */
+}
+  /* Estilo de bloque del segundo nivel (sobre) */
+  #csMenu ul li:hover ul {
+    display: block;
+  }
+  /* Estilo de cada celda */
+  #csMenu ul li:hover ul li {
+    float: none;
+  }
+  /* Estilo de cada enlace */
+  #csMenu ul li:hover ul li a {
+    text-align: left;
+    white-space: nowrap;
+  }
+    /* Estilo de cada enlace (sobre) */
+  #csMenu ul li:hover ul li a:hover {
+    background-color: #A1887F; /* Un marrón aún más claro para el hover del submenú */
+  }
+
+  /* Estilo de bloque del tercer nivel */
+  #csMenu ul li ul li ul {
+    display: none !important;    
+  }
+  /* Estilo de bloque del tercer nivel (sobre) */
+  #csMenu ul li ul li:hover ul {
+    top: 2em;
+    left: 7em;
+    display: block !important;
+  }
