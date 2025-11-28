@@ -3,13 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quito Colonial</title>
+    <title>Centro-Norte de Quito - Introducción</title>
     <link rel="stylesheet" href="css/stlyles.css">
-    <link rel="stylesheet" href="css/styles_index.css">
+    <link rel="stylesheet" href="css/thumbelina.css">
+    <link rel="stylesheet" href="css/styles_sur_introduccion.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/thumbelina.js"></script>
+    <script type="text/javascript">
+        $(function(){
+        $('#slider').Thumbelina({
+                $bwdBut:$('#slider .left'),
+			    $fwdBut:$('#slider .right')
+            });
+        });
+    </script>
 </head>
 <body>
     <div id="nav-container">
-        <div class="logo">Logo</div>
+        <div class="logo">
+            <p class="home-button"><a href="index.html" class="home-button">Inicio</a></p>
+        </div>
         <nav id="csMenu">
             <ul>
                 <li><a href="introduccion_sur.html">Sur &#8595;</a>
@@ -31,7 +44,7 @@
                         <li><a href="lugares_principales_centro.html">Lugares Principales &#707;</a>
                             <ul>
                                 <li><a href="san_francisco.html">San Francisco</a></li>
-                                <li><a href="la_marin.html">La marín</a></li>
+                                <li><a href="la_marin.html">La Marín</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -55,9 +68,9 @@
                         <li><a href="lugares_principales_norte.html">Lugares Principales &#707;</a>
                             <ul>
                                 <li><a href="la_carolina.html">La Carolina</a></li>
-                                <li><a href="estadio_olimpico.html">Estadio Olímpcio</a></li>
+                                <li><a href="estadio_olimpico.html">Estadio Olímpico</a></li>
                             </ul>
-                    </li>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -65,10 +78,9 @@
     </div>
     <main>
         <section>
-            <h1>Bienvenido a Quito, Luz de América</h1>
-            <p>Quito, la capital de Ecuador, es una ciudad de contrastes fascinantes. Anidada en un valle andino a 2.850 metros sobre el nivel del mar, está flanqueada por majestuosos volcanes. Su centro histórico, uno de los mejor conservados y más grandes de América Latina, fue declarado Patrimonio de la Humanidad por la UNESCO en 1978. Pasear por sus calles empedradas es como viajar en el tiempo, con iglesias barrocas, monasterios centenarios y plazas coloniales que narran historias de una rica herencia cultural y artística. La temática de esta página busca evocar esa esencia colonial que define el corazón de la ciudad.</p>
+            <h1>Introducción al Centro-Norte de Quito</h1>
+            <p>El Centro-Norte es la zona de transición entre el Quito antiguo y el moderno. Este sector, que incluye barrios como La Mariscal, La Floresta y El Ejido, es conocido por su vibrante vida nocturna, su oferta cultural y su ambiente cosmopolita. [13] Originalmente concebido como una zona residencial para la élite a principios del siglo XX, hoy es un crisol de actividades comerciales, turísticas y de ocio. [14] Aquí conviven edificios patrimoniales con modernas construcciones, creando un paisaje urbano ecléctico y dinámico que atrae tanto a locales como a extranjeros.</p>
         </section>
-        <img src="src/quito.jpg">
     </main>
 </body>
 </html>
