@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canicas - Fiestas de Quito</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    <style>
+        /* Estilos para secciones de tipos de juegos */
+        .juego-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            padding: 30px;
+            background-color: #C7BDBD;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .juego-section.izquierda {
+            flex-direction: row;
+        }
+
+        .juego-section.derecha {
+            flex-direction: row-reverse;
+        }
+
+        .juego-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .juego-image {
+            flex: 0 0 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .juego-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .juego-content h2 {
+            color: #d52b1e;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #d52b1e;
+            padding-bottom: 10px;
+        }
+
+        .juego-content p {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .juego-content strong {
+            color: #003893;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .juego-section {
+                flex-direction: column !important;
+                gap: 20px;
+            }
+
+            .juego-section.derecha {
+                flex-direction: column !important;
+            }
+
+            .juego-image {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .juego-content {
+                flex: 1;
+                min-width: auto;
+            }
+        }
+
+        /* Hero mejorado */
+        .hero.is-quito-red {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero.is-quito-red::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #d52b1e 0%, #a02016 100%);
+            opacity: 0.9;
+        }
+
+        .hero-body {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero.is-quito-red .title {
+            color: #ffffff;
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero.is-quito-red .subtitle {
+            color: #f0f0f0;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar is-quito-blue" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="../index.html">
+                <strong class="is-size-4">🎉 Fiestas de Quito</strong>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <!-- Menú Lugares Importantes -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../lugares.html">
+                        Lugares Importantes
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../lugares/LaRonda.html">
+                            La Ronda
+                        </a>
+                        <a class="navbar-item" href="../lugares/SanFrancisco.html">
+                            San Francisco
+                        </a>
+                        <a class="navbar-item" href="../lugares/PlazaDelTeatro.html">
+                            Plaza del Teatro
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menú Costumbres -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../costumbres.html">
+                        Costumbres
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../costumbres/chivas.html">
+                            Chivas
+                        </a>
+                        <a class="navbar-item" href="../costumbres/coplas.html">
+                            Coplas
+                        </a>
+                        <a class="navbar-item" href="../costumbres/coches-madera.html">
+                            Coches de madera
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menú Juegos Tradicionales -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../juegos.html">
+                        Juegos Tradicionales
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="40.html">
+                            40
+                        </a>
+                        <a class="navbar-item" href="trompo.html">
+                            Trompo
+                        </a>
+                        <a class="navbar-item" href="canicas.html" aria-current="page">
+                            Canicas
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Menú Comida Tradicional -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../comida.html">
+                        Comida Tradicional
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../comida/canelazos.html">
+                            Canelazos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../juegos.html">Juegos Tradicionales</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Canicas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección Héroe -->
+    <section class="hero is-quito-red is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title">
+                    El Juego de Canicas
+                </p>
+                <p class="subtitle">
+                    Un clásico de la infancia que perdura en las festividades de Quito.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="section">
+        <div class="container">
+            <!-- Introducción -->
+            <div class="content">
+                <h1 class="title">¿Qué son las Canicas?</h1>
+                <p>Las canicas son pequeñas bolas de vidrio, cerámica o piedra que han sido parte de la diversión infantil durante generaciones. En las festividades de Quito, las canicas siguen siendo un juego tradicional que reúne a niños y adultos en las calles, plazas y espacios públicos. Con múltiples variantes, las canicas ofrecen diversión, aprendizaje y entretenimiento sin necesidad de equipamiento costoso.</p>
+                <br>
+            </div>
+
+            <!-- Tipo de Juego 1: El Hoyo -->
+            <section class="juego-section izquierda">
+                <div class="juego-content">
+                    <h2>1. El Juego del Hoyo</h2>
+                    <p>Uno de los juegos más populares de canicas es el conocido como <strong>hoyo</strong>, también llamado <strong>guá</strong> en algunos países. Se juega en el suelo, donde se hace un pequeño hoyo o agujero. Los jugadores deben intentar lanzar sus canicas desde una cierta distancia para hacer que caigan en el hoyo. El jugador que consiga introducir más canicas en el hoyo es el ganador.</p>
+                    <p>Una de las variantes de este juego es <strong>Chiva, Pie Grande y Tute</strong>, que nos ha dado más alegrías y horas de juego. En este juego, donde ya interviene la maña, hay que <strong>golpear hasta 3 veces a la canica del rival</strong> antes de finalizar la partida entrando al hoyo y eliminando así a tus contrincantes. <strong>El ganador se queda con las canicas de todos los participantes del juego</strong>.</p>
+                </div>
+                <div class="juego-image">
+                    <img src="../media/canicas-hoyo.jpg" alt="Juego del Hoyo">
+                </div>
+            </section>
+
+            <!-- Tipo de Juego 2: El Círculo -->
+            <section class="juego-section derecha">
+                <div class="juego-content">
+                    <h2>2. El Círculo</h2>
+                    <p>Otra variante popular es el <strong>juego del círculo</strong>. En este juego, se dibuja un círculo en el suelo y se colocan varias canicas en su interior. Los jugadores toman turnos lanzando sus propias canicas para intentar sacar las del círculo. Aquellos que logran sacar las canicas del círculo pueden quedarse con ellas, lo que convierte este juego en una especie de <strong>competición por la acumulación de canicas</strong>.</p>
+                    <p>Es una de las versiones más dinámicas, ya que involucra <strong>precisión y estrategia</strong>, dado que los jugadores deben calcular cómo golpear las canicas del centro sin sacar la suya propia. La concentración y la destreza manual son fundamentales para dominar este juego.</p>
+                </div>
+                <div class="juego-image">
+                    <img src="../media/canicas-circulo.jpg" alt="Juego del Círculo">
+                </div>
+            </section>
+
+            <!-- Tipo de Juego 3: Canicas de Tiro -->
+            <section class="juego-section izquierda">
+                <div class="juego-content">
+                    <h2>3. Canicas de Tiro</h2>
+                    <p>Esta modalidad es más simple y directa, ideal para <strong>niños pequeños o principiantes</strong>. Consiste en lanzar las canicas a una <strong>meta predeterminada</strong>, que puede ser una línea dibujada en el suelo o una lata, intentando acercarse lo más posible a ese objetivo.</p>
+                    <p>Este juego puede incluir diversas reglas, como el número de intentos permitidos o si se puede golpear las canicas de los oponentes. Es perfecto para desarrollar la precisión y el control, permitiendo que los jugadores más jóvenes aprendan las técnicas básicas antes de pasar a juegos más complejos.</p>
+                </div>
+                <div class="juego-image">
+                    <img src="../media/canicas-tiro.jpg" alt="Canicas de Tiro">
+                </div>
+            </section>
+
+            <!-- Tipo de Juego 4: Carreras de Canicas -->
+            <section class="juego-section derecha">
+                <div class="juego-content">
+                    <h2>4. Juegos de Carreras de Canicas</h2>
+                    <p>Aunque no es propiamente un juego de canicas tradicional, <strong>¿quién no ha jugado de pequeño a las carreras de canicas?</strong> En este juego, los participantes construyen <strong>pistas o caminos</strong> (a menudo utilizando rampas y obstáculos) por los que las canicas deben correr.</p>
+                    <p>El objetivo es que <strong>la canica de cada jugador llegue primero al final del recorrido</strong>. Este juego estimula la creatividad y la ingeniería casera, permitiendo que los niños diseñen circuitos cada vez más complejos y desafiantes. Las carreras de canicas pueden competirse individualmente o en equipo, añadiendo variedad y entretenimiento a las festividades.</p>
+                </div>
+                <div class="juego-image">
+                    <img src="../media/canicas-carrera.jpg" alt="Carreras de Canicas">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Página de Fiestas de Quito</strong> por Santiago Gallardo
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Burger menu functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

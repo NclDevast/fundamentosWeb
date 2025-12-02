@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del 40 - Fiestas de Quito</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    <style>
+        /* Estilos para secciones de reglas */
+        .regla-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            padding: 30px;
+            background-color: #C7BDBD;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .regla-section.izquierda {
+            flex-direction: row;
+        }
+
+        .regla-section.derecha {
+            flex-direction: row-reverse;
+        }
+
+        .regla-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .regla-image {
+            flex: 0 0 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .regla-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .regla-content h2 {
+            color: #d52b1e;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #d52b1e;
+            padding-bottom: 10px;
+        }
+
+        .regla-content ol {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+
+        .regla-content li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .regla-content li strong {
+            color: #003893;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .regla-section {
+                flex-direction: column !important;
+                gap: 20px;
+            }
+
+            .regla-section.derecha {
+                flex-direction: column !important;
+            }
+
+            .regla-image {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .regla-content {
+                flex: 1;
+                min-width: auto;
+            }
+        }
+
+        /* Hero mejorado */
+        .hero.is-quito-red {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero.is-quito-red::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #d52b1e 0%, #a02016 100%);
+            opacity: 0.9;
+        }
+
+        .hero-body {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero.is-quito-red .title {
+            color: #ffffff;
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero.is-quito-red .subtitle {
+            color: #f0f0f0;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar is-quito-blue" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="../index.html">
+                <strong class="is-size-4">🎉 Fiestas de Quito</strong>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <!-- Menú Lugares Importantes -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../lugares.html">
+                        Lugares Importantes
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../lugares/LaRonda.html">
+                            La Ronda
+                        </a>
+                        <a class="navbar-item" href="../lugares/SanFrancisco.html">
+                            San Francisco
+                        </a>
+                        <a class="navbar-item" href="../lugares/PlazaDelTeatro.html">
+                            Plaza del Teatro
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menú Costumbres -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../costumbres.html">
+                        Costumbres
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../costumbres/chivas.html">
+                            Chivas
+                        </a>
+                        <a class="navbar-item" href="../costumbres/coplas.html">
+                            Coplas
+                        </a>
+                        <a class="navbar-item" href="../costumbres/coches-madera.html">
+                            Coches de madera
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menú Juegos Tradicionales -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../juegos.html">
+                        Juegos Tradicionales
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="40.html" aria-current="page">
+                            40
+                        </a>
+                        <a class="navbar-item" href="trompo.html">
+                            Trompo
+                        </a>
+                        <a class="navbar-item" href="canicas.html">
+                            Canicas
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Menú Comida Tradicional -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../comida.html">
+                        Comida Tradicional
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../comida/canelazos.html">
+                            Canelazos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../juegos.html">Juegos Tradicionales</a></li>
+            <li class="is-active"><a href="#" aria-current="page">40</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección Héroe -->
+    <section class="hero is-quito-red is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title">
+                    El Juego del 40
+                </p>
+                <p class="subtitle">
+                    Una tradición de estrategia, ingenio y diversión en las fiestas de Quito.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="section">
+        <div class="container">
+            <!-- Introducción -->
+            <div class="content">
+                <h1 class="title">¿Qué es el Juego del 40?</h1>
+                <p>El 40 es uno de los juegos de cartas más tradicionales y populares durante las festividades de Quito. Jugado por cuatro personas en dos parejas, este juego combina estrategia, memoria y un poco de suerte. Durante las fiestas de Quito, especialmente en las chivas y plazas, se pueden ver grupos de personas disfrutando intensamente de este clásico juego ecuatoriano.</p>
+                <br>
+            </div>
+
+            <!-- Regla 1: Carta Mayor -->
+            <section class="regla-section izquierda">
+                <div class="regla-content">
+                    <h2>1. Carta Mayor</h2>
+                    <ol>
+                        <li>En el juego del 40, se utiliza una baraja de <strong>40 cartas</strong>, eliminando todos los ochos, nueves y dieces.</li>
+                        <li>La carta más baja es el <strong>As</strong>, y las más altas siendo <strong>J</strong>, la <strong>Q</strong> y la <strong>K</strong>.</li>
+                    </ol>
+                </div>
+                <div class="regla-image">
+                    <img src="../media/40-cartas.jpg" alt="Cartas del juego del 40">
+                </div>
+            </section>
+
+            <!-- Regla 2: Barajeo y Corte -->
+            <section class="regla-section derecha">
+                <div class="regla-content">
+                    <h2>2. Barajeo y Corte</h2>
+                    <ol>
+                        <li>Antes de iniciar, uno de los jugadores <strong>baraja las cartas completamente</strong>.</li>
+                        <li>El jugador a la izquierda del que baraja realiza el <strong>corte</strong> de la baraja.</li>
+                        <li>Después del corte, la baraja se reúne nuevamente en una sola pila.</li>
+                        <li>Es importante que el barajeo y corte sean justos para mantener la equidad del juego.</li>
+                    </ol>
+                </div>
+                <div class="regla-image">
+                    <img src="../media/40-baraja.jpg" alt="Barajeo del 40">
+                </div>
+            </section>
+
+            <!-- Regla 3: Como Repartir y quien empieza -->
+            <section class="regla-section izquierda">
+                <div class="regla-content">
+                    <h2>3. Como Repartir y Quien Empieza</h2>
+                    <ol>
+                        <li>El <strong>repartidor se elige al azar</strong> en la primera mano.</li>
+                        <li>Las cartas se reparten de <strong> 5 </strong> a cada jugador, comenzando por la derecha del repartidor.</li>
+                        <li><strong>El juego comienza con el jugador a la derecha del repartidor</strong>.</li>
+                        <li>En las manos siguientes, el repartidor cambia hacia la derecha.</li>
+                    </ol>
+                </div>
+                <div class="regla-image">
+                    <img src="../media/40-repartir.jpg" alt="Repartición de cartas">
+                </div>
+            </section>
+
+            <!-- Regla 4: Caida -->
+            <section class="regla-section derecha">
+                <div class="regla-content">
+                    <h2>4. Caida</h2>
+                    <ol>
+                        <li><strong>"Caída"</strong> ocurre cuando un jugador tira el mismo numero que el anterior jugador.</li>
+                        <li>Cuando un jugador logra una caída, <strong>la anuncia inmediatamente</strong> antes de llevarse su cartón.</li>
+                        <li>Una caída otorga 2 puntos que se suman al total del equipo.</li>
+                        <li>Si un jugador tiene tres cartas del mismo número (ronda), es la <strong>caída más valiosa</strong>.</li>
+                        <li>No se puede anunciar caída después de haber descartado una carta diferente.</li>
+                    </ol>
+                </div>
+                <div class="regla-image">
+                    <img src="../media/40-caida.jpg" alt="Caída en el 40">
+                </div>
+            </section>
+
+            <!-- Regla 5: Limpia -->
+            <section class="regla-section izquierda">
+                <div class="regla-content">
+                    <h2>5. Limpia</h2>
+                    <ol>
+                        <li><strong>"Limpia"</strong> es cuando un jugador se lleva todas las cartas de la mesa. Otorgando 2 puntos.</li>
+                        <li>Si un equipo llega a <strong>38 puntos</strong>, la limpia no otorga puntos</li>
+                        <li>La "limpia" puede ocurrir por caídas, escaleras o combinaciones de puntos.</li>
+                    </ol>
+                </div>
+                <div class="regla-image">
+                    <img src="../media/40-limpia.jpg" alt="Limpia del 40">
+                </div>
+            </section>
+
+            <!-- Regla 6: Suma -->
+            <section class="regla-section derecha">
+                <div class="regla-content">
+                    <h2>6. Suma</h2>
+                    <ol>
+                        <li>Un jugador puede llevarse 2 cartas si tiene <strong>la suma de las 2 cartas</strong>.</li>
+                        <li>La J, Q, K <strong>no tienen valor numérico y no pueden ser resultado de suma.</strong>.</li>
+                        <li>Los números del <strong>2 al 7 valen su valor facial y el as vale 1</strong>.</li>
+                        <li>La suma se calcula <strong>solo en las caídas y escaleras</strong>, no en las cartas individuales en mano.</li>
+                        </ol>
+                </div>
+                <div class="regla-image">
+                    <img src="../media/40-suma.jpg" alt="Sistema de puntuación del 40">
+                </div>
+            </section>
+
+            <!-- Regla 7: Escalera -->
+            <section class="regla-section izquierda">
+                <div class="regla-content">
+                    <h2>7. Escalera</h2>
+                    <ol>
+                        <li>Una <strong>"escalera"</strong> es una secuencia de cartas consecutivas de cualquier palo.</li>
+                        <li>Por ejemplo: <strong>3, 4, 5</strong> es una escalera válida.</li>
+                        <li>Para reclamar una escalera, el jugador necesita <strong>levantar el primer miembro de la escalera</strong>.</li>
+                        <li>Las escaleras pueden extenderse hasta <strong>la carta más alta disponible</strong>.</li>
+                        <li>Una vez se llega a la K <strong>no se puede retornar al as de nuevo</strong>.</li>
+                        <li>Una escalera larga es muy valiosa y puede ser decisiva en el juego.</li>
+                    </ol>
+                </div>
+                <div class="regla-image">
+                    <img src="../media/40-escalera.jpg" alt="Escalera del 40">
+                </div>
+            </section>
+
+            <!-- Regla 8: Como contar Cartón -->
+            <section class="regla-section derecha">
+                <div class="regla-content">
+                    <h2>8. Como Contar Cartón</h2>
+                    <ol>
+                        <li><strong>"Cartón"</strong> es el nombre dado al conteo final de puntos en cada mano.</li>
+                        <li>Al terminar la mano, se <strong>cuentan todos los puntos</strong> acumulados por caídas y escaleras.</li>
+                        <li>Se hace el <strong>cartón primero</strong> antes de comenzar una nueva mano.</li>
+                        <li>Se cuenta <strong>hasta el 19 normalmente, despues se cuenta del 6</strong>.</li>
+                        <li>Si la cuenta termina en un impar, <strong>se redondea al siguiente par inmediato</strong>.</li>
+                        <li>La cuenta despues del 6 determina <strong>cuantos puntos se otorga al final de la ronda</strong>.</li>
+                        <li>Si se alcanza los 30 puntos<strong> entonces el cartón ya no da puntos extra</strong>.</li>
+                    </ol>
+                </div>
+                <div class="regla-image">
+                    <img src="../media/40-carton.jpg" alt="Conteo de cartón">
+                </div>
+            </section>
+
+            <!-- Regla 9: Como ganar -->
+            <section class="regla-section izquierda">
+                <div class="regla-content">
+                    <h2>9. Como Ganar</h2>
+                    <ol>
+                        <li>El objetivo es que un equipo alcance <strong>40 puntos antes que el otro</strong>.</li>
+                        <li>En el caso de hacer 4 caídas consecutivas <strong>se gana inmediatamente</strong>.</li>
+                        <li>La estrategia, memoria y comunicación entre compañeros son clave para la victoria.</li>
+                    </ol>
+                </div>
+                <div class="regla-image">
+                    <img src="../media/40-ganador.jpg" alt="Victoria en el 40">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Página de Fiestas de Quito</strong> por Santiago Gallardo
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Burger menu functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
