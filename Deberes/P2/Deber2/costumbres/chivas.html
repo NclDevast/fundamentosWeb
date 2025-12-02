@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chivas - Fiestas de Quito</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    <style>
+        /* Slider styles */
+        .slider-container {
+            position: relative;
+            max-height: 350px;
+            max-width: 2000px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 350px;
+        }
+
+        .slider-slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .slider-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .slider-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 0;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .slider-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .slider-prev {
+            left: 10px;
+        }
+
+        .slider-next {
+            right: 10px;
+        }
+
+        .slider-dots {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #d52b1e;
+        }
+
+        /* Contenedor de lugares */
+        .lugares-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            padding: 40px 20px;
+            background-color: #d52b1e;
+            border-radius: 8px;
+        }
+
+        .lugar-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .lugar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .lugar-card h3 {
+            color: #003893;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .lugar-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .btn-contratar {
+            background-color: #d52b1e;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-contratar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+            z-index: 0;
+        }
+
+        .btn-contratar:hover {
+            background-color: #a02016;
+            transform: scale(1.05);
+        }
+
+        .btn-contratar:hover::before {
+            left: 100%;
+        }
+
+        .btn-contratar:active {
+            transform: scale(0.98);
+        }
+
+        .btn-contratar span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .lugar-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #d52b1e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar is-quito-blue" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="../index.html">
+                <strong class="is-size-4">🎉 Fiestas de Quito</strong>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <!-- Menú Lugares Importantes -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../lugares.html">
+                        Lugares Importantes
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../lugares/LaRonda.html">
+                            La Ronda
+                        </a>
+                        <a class="navbar-item" href="../lugares/SanFrancisco.html">
+                            San Francisco
+                        </a>
+                        <a class="navbar-item" href="../lugares/PlazaDelTeatro.html">
+                            Plaza del Teatro
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menú Costumbres -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../costumbres.html">
+                        Costumbres
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="chivas.html" aria-current="page">
+                            Chivas
+                        </a>
+                        <a class="navbar-item" href="coplas.html">
+                            Coplas
+                        </a>
+                        <a class="navbar-item" href="coches-madera.html">
+                            Coches de madera
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menú Juegos Tradicionales -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../juegos.html">
+                        Juegos Tradicionales
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../juegos/40.html">
+                            40
+                        </a>
+                        <a class="navbar-item" href="../juegos/trompo.html">
+                            Trompo
+                        </a>
+                        <a class="navbar-item" href="../juegos/canicas.html">
+                            Canicas
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Menú Comida Tradicional -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="../comida.html">
+                        Comida Tradicional
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../comida/canelazos.html">
+                            Canelazos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../costumbres.html">Costumbres</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Chivas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección Héroe con Slider -->
+    <section class="hero is-quito-red is-medium">
+        <div class="hero-body">
+            <div class="container">
+                <div class="slider-container">
+                    <div class="slider-wrapper" id="sliderWrapper">
+                        <div class="slider-slide">
+                            <img src="../media/chivas1.jpg" alt="Chivas - Vista 1">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="../media/chivas2.jpg" alt="Chivas - Vista 2">
+                        </div>
+                    </div>
+                    <button class="slider-button slider-prev" id="prevBtn" aria-label="Imagen anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-button slider-next" id="nextBtn" aria-label="Imagen siguiente">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="goToSlide(0)" aria-label="Ir a imagen 1"></span>
+                    <span class="dot" onclick="goToSlide(1)" aria-label="Ir a imagen 2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Las Chivas</h1>
+            <p>Las chivas son una tradición icónica de las fiestas de Quito. Estos buses típicos, coloridamente decorados y adornados, son símbolos de la celebración quiteña. Durante las festividades, las chivas recorren las calles llevando grupos de personas que cantan, bailan y disfrutan de la música tradicional en un ambiente de pura alegría y confraternidad.</p>
+            <br>
+            <h2 class="subtitle">Historia</h2>
+            <p>Las chivas tienen sus raíces en el transporte rural ecuatoriano, pero durante las fiestas de Quito se transforman en vehículos festivos y decorados. Se han convertido en un elemento inseparable de las celebraciones, permitiendo que familias y amigos compartan momentos de alegría mientras recorren los lugares históricos de la ciudad.</p>
+            <br>
+            <h2 class="subtitle">Importancia en las Fiestas</h2>
+            <p>Durante las festividades, las chivas son el principal medio de transporte festivo. Sus ocupantes disfrutan de música en vivo, bebidas típicas como el canelazo, y la compañía de desconocidos que se convierten en amigos por una noche. El sonido de las chivas con sus gritos de alegría es un símbolo inequívoco de que Quito está en fiesta.</p>
+            <br>
+            <h2 class="subtitle">Características</h2>
+            <ul>
+                <li><strong>Decoración Colorida:</strong> Flores, luces y adornos que hacen de cada chiva una obra de arte móvil.</li>
+                <li><strong>Música en Vivo:</strong> Bandas de pueblo que tocan instrumentos tradicionales durante el recorrido.</li>
+                <li><strong>Capacidad Festiva:</strong> Espacios amplios donde caben grupos de 20 a 40 personas disfrutando juntas.</li>
+                <li><strong>Recorridos Emblemáticos:</strong> Rutas que pasan por los lugares más históricos y tradicionales de Quito.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sección de Lugares donde Contratar -->
+    <section class="section">
+        <div class="container">
+            <h2 class="title has-text-centered">Lugares Donde Contratar</h2>
+            <div class="lugares-container">
+                <!-- Lugar 1 -->
+                <div class="lugar-card">
+                    <div class="lugar-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>Centro Histórico</h3>
+                    <p>Encuentra chivas disponibles en las principales plazas del centro, listas para llevarte en un viaje lleno de alegría y tradición por las calles coloniales de Quito.</p>
+                    <button class="btn-contratar" onclick="mostrarAlerta('Centro Histórico')">
+                        <span>Contratar Ahora</span>
+                    </button>
+                </div>
+
+                <!-- Lugar 2 -->
+                <div class="lugar-card">
+                    <div class="lugar-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Plaza de la Independencia</h3>
+                    <p>Contrata directamente en la plaza emblemática de Quito. Las chivas parten regularmente para recorridos por los principales atractivos de la ciudad durante las festividades.</p>
+                    <button class="btn-contratar" onclick="mostrarAlerta('Plaza de la Independencia')">
+                        <span>Contratar Ahora</span>
+                    </button>
+                </div>
+
+                <!-- Lugar 3 -->
+                <div class="lugar-card">
+                    <div class="lugar-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Agencias de Turismo</h3>
+                    <p>Contrata a través de agencias de turismo establecidas que ofrecen paquetes completos con chivas, música en vivo y servicios de bebidas y comida tradicional.</p>
+                    <button class="btn-contratar" onclick="mostrarAlerta('Agencias de Turismo')">
+                        <span>Contratar Ahora</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Página de Fiestas de Quito</strong> por Santiago Gallardo
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-slide');
+        const dots = document.querySelectorAll('.dot');
+        const sliderWrapper = document.getElementById('sliderWrapper');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showSlide(n) {
+            const offset = -n * 100;
+            sliderWrapper.style.transform = `translateX(${offset}%)`;
+            
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[n].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+
+        function mostrarAlerta(lugar) {
+            alert(`¡Gracias por tu interés! Para contratar chivas en ${lugar}, por favor contacta directamente con la agencia. ¡Que disfrutes de las fiestas de Quito!`);
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Burger menu functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

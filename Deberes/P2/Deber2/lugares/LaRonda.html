@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Ronda - Fiestas de Quito</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    <style>
+        /* Slider styles */
+        .slider-container {
+            position: relative;
+            max-height: 350px;
+            max-width: 2000px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 350px;
+        }
+
+        .slider-slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .slider-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .slider-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 0;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .slider-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .slider-prev {
+            left: 10px;
+        }
+
+        .slider-next {
+            right: 10px;
+        }
+
+        .slider-dots {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #d52b1e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar is-quito-blue" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="../index.html">
+                <strong class="is-size-4">🎉 Fiestas de Quito</strong>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <!-- Menú Lugares Importantes -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Lugares Importantes
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="LaRonda.html" aria-current="page">
+                            La Ronda
+                        </a>
+                        <a class="navbar-item" href="SanFrancisco.html">
+                            San Francisco
+                        </a>
+                        <a class="navbar-item" href="plaza-teatro.html">
+                            Plaza del Teatro
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menú Costumbres -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Costumbres
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../costumbres/chivas.html">
+                            Chivas
+                        </a>
+                        <a class="navbar-item" href="../costumbres/coplas.html">
+                            Coplas
+                        </a>
+                        <a class="navbar-item" href="../costumbres/coches-madera.html">
+                            Coches de madera
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menú Juegos Tradicionales -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Juegos Tradicionales
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../juegos/40.html">
+                            40
+                        </a>
+                        <a class="navbar-item" href="../juegos/trompo.html">
+                            Trompo
+                        </a>
+                        <a class="navbar-item" href="../juegos/canicas.html">
+                            Canicas
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Menú Comida Tradicional -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Comida Tradicional
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../comida/canelazos.html">
+                            Canelazos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../lugares.html">Lugares Importantes</a></li>
+            <li class="is-active"><a href="#" aria-current="page">La Ronda</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección Héroe con Slider -->
+    <section class="hero is-quito-red is-medium">
+        <div class="hero-body">
+            <div class="container">
+                <div class="slider-container">
+                    <div class="slider-wrapper" id="sliderWrapper">
+                        <div class="slider-slide">
+                            <img src="../media/LaRonda1.jpg" alt="La Ronda - Vista 1">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="../media/LaRonda2.jpg" alt="La Ronda - Vista 2">
+                        </div>
+                    </div>
+                    <button class="slider-button slider-prev" id="prevBtn" aria-label="Imagen anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-button slider-next" id="nextBtn" aria-label="Imagen siguiente">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="goToSlide(0)" aria-label="Ir a imagen 1"></span>
+                    <span class="dot" onclick="goToSlide(1)" aria-label="Ir a imagen 2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title">La Ronda</h1>
+            <p>La Ronda es una de las calles más emblemáticas y históricas del Centro Histórico de Quito. Con sus adoquines coloniales y fachadas de arquitectura tradicional, esta calle es el corazón cultural de la ciudad durante las fiestas de Quito.</p>
+            <br>
+            <h2 class="subtitle">Historia</h2>
+            <p>Ubicada en el barrio antiguo de Quito, La Ronda data desde la época colonial y ha sido testigo de innumerables celebraciones y eventos históricos. Su nombre proviene de las rondas o paseos que realizaban los quiteños por esta vía durante las festividades.</p>
+            <br>
+            <h2 class="subtitle">Importancia en las Fiestas</h2>
+            <p>Durante las fiestas de Quito, La Ronda se transforma en un espacio lleno de vida con vendedores de comida típica, bebidas tradicionales como el canelazo, y grupos de música que tocan canciones populares. Los coloridos trajes tradicionales, la risa de las familias y el ambiente de confraternidad hacen de esta calle un lugar imprescindible para visitar durante las festividades.</p>
+            <br>
+            <h2 class="subtitle">Atractivos</h2>
+            <ul>
+                <li><strong>Tiendas Artesanales:</strong> Donde se venden productos tradicionales y souvenirs quiteños.</li>
+                <li><strong>Restaurantes Típicos:</strong> Oferecen comida tradicional ecuatoriana.</li>
+                <li><strong>Música en Vivo:</strong> Bandas de pueblo y músicos callejeros animan el ambiente.</li>
+                <li><strong>Bebidas Tradicionales:</strong> El canelazo y otras bebidas típicas son protagonistas.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Página de Fiestas de Quito</strong> por Santiago Gallardo
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-slide');
+        const dots = document.querySelectorAll('.dot');
+        const sliderWrapper = document.getElementById('sliderWrapper');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showSlide(n) {
+            const offset = -n * 100;
+            sliderWrapper.style.transform = `translateX(${offset}%)`;
+            
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[n].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Burger menu functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiestas de Quito</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar is-quito-blue" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html" aria-current="page">
+                <strong class="is-size-4">🎉 Fiestas de Quito</strong>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <!-- Menú Lugares Importantes -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Lugares Importantes
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="lugares/LaRonda.html">
+                            La Ronda
+                        </a>
+                        <a class="navbar-item" href="lugares/SanFrancisco.html">
+                            San Francisco
+                        </a>
+                        <a class="navbar-item" href="lugares/plaza-teatro.html">
+                            Plaza del Teatro
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menú Costumbres -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Costumbres
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="costumbres/chivas.html">
+                            Chivas
+                        </a>
+                        <a class="navbar-item" href="costumbres/coplas.html">
+                            Coplas
+                        </a>
+                        <a class="navbar-item" href="costumbres/coches-madera.html">
+                            Coches de madera
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menú Juegos Tradicionales -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Juegos Tradicionales
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="juegos/40.html">
+                            40
+                        </a>
+                        <a class="navbar-item" href="juegos/trompo.html">
+                            Trompo
+                        </a>
+                        <a class="navbar-item" href="juegos/canicas.html">
+                            Canicas
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Menú Comida Tradicional -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Comida Tradicional
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="comida/canelazos.html">
+                            Canelazos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Principal</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección Héroe -->
+    <section class="hero is-quito-red is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title">
+                    ¡Que viva Quito!
+                </p>
+                <p class="subtitle">
+                    Celebra con nosotros las fiestas de la Carita de Dios.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Tradiciones y Alegría</h1>
+            <p>Las fiestas de Quito son una celebración llena de historia, cultura y alegría que conmemora la fundación española de la ciudad el 6 de diciembre de 1534. Durante esta época, la ciudad se transforma con desfiles, conciertos, ferias y una gran variedad de eventos que unen a quiteños y visitantes.</p>
+            <br>
+            <p>Desde los coloridos desfiles de la confraternidad hasta los campeonatos del tradicional juego de cartas "40", las festividades ofrecen algo para todos. Las calles se llenan del sonido de las bandas de pueblo y el aroma de la comida típica, donde el "canelazo" se convierte en la bebida predilecta para calentar las frías noches andinas.</p>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Página de Fiestas de Quito</strong> por Gemini Code Assist. El código fuente está licenciado
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
